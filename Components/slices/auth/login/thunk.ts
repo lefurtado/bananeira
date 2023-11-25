@@ -43,13 +43,13 @@ export const loginUser = (user: any, router : any) => async (dispatch: any) => {
         data = finallogin.data;
         if (finallogin.username && finallogin.password) {
           dispatch(loginSuccess(data));
-           router.push('/dashboard', undefined, { shallow: true })
+            router.push('/bananeira/dashboard', undefined, { shallow: true })
         } else {
           dispatch(apiError(finallogin));
         }
       } else {
         dispatch(loginSuccess(data));
-         router.push('/dashboard', undefined, { shallow: true })
+          router.push('/bananeira/dashboard', undefined, { shallow: true })
       }
     }
   } catch (error) {
