@@ -208,37 +208,6 @@ const Login = (props: any) => {
                                                                     Sign In
                                                                 </Button>
                                                             </div>
-
-                                                            <div className="mt-4 pt-2 text-center">
-                                                                <div className="signin-other-title">
-                                                                    <h5 className="fs-13 mb-4 title">Sign In with</h5>
-                                                                </div>
-                                                                <div className="pt-2 hstack gap-2 justify-content-center">
-
-                                                                    <FacebookLogin
-                                                                        // appId={facebook.APP_ID}
-                                                                        autoLoad={false}
-                                                                        callback={facebookResponse}
-                                                                        render={(renderProps: any) => (
-                                                                            <Button type="button" variant='soft-primary' className="btn-icon" onClick={renderProps.onClick}>
-                                                                                <i className="ri-facebook-fill fs-16" />
-                                                                            </Button>
-                                                                        )}
-                                                                    />
-                                                                    {/* <button type="button" className="btn btn-soft-primary btn-icon"><i className="ri-facebook-fill fs-16"></i></button> */}
-                                                                    {/* <button type="button" className="btn btn-soft-danger btn-icon"><i className="ri-google-fill fs-16"></i></button> */}
-
-                                                                    <GoogleLogin
-                                                                        clientId={"23144678283-oek7ncjmmrgkgmi2i56sc411gp71a8sp.apps.googleusercontent.com"}
-                                                                        render={(renderProps: any) => (
-                                                                            <Button variant='soft-danger' type="button" className="btn-icon" onClick={renderProps.onClick}>
-                                                                                <i className="ri-google-fill fs-16" />
-                                                                            </Button>
-                                                                        )} onSuccess={googleResponse} onFailure={() => { }} />
-                                                                    <Button variant='soft-dark' type="button" className="btn-icon"><i className="ri-github-fill fs-16"></i></Button>
-                                                                    <Button variant='soft-info' type="button" className="btn-icon"><i className="ri-twitter-fill fs-16"></i></Button>
-                                                                </div>
-                                                            </div>
                                                         </Form>
 
                                                         <div className="text-center mt-5">
