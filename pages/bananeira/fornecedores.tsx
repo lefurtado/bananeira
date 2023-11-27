@@ -2,17 +2,17 @@ import React, { ReactElement } from 'react';
 import Head from 'next/head';
 import Layout from '@common/Layout';
 
-const Dashboard = () => {
+const Fornecedores = () => {
   return (
     <React.Fragment>
       <Head>
-        <title>Dashboard | Bananeira Garden</title>
+        <title>Fornecedores | Bananeira Garden</title>
       </Head>
     </React.Fragment>
   );
 }
 
-Dashboard.getLayout = (page: ReactElement) => {
+Fornecedores.getLayout = (page: ReactElement) => {
   return (
     <Layout>
       {page}
@@ -21,4 +21,4 @@ Dashboard.getLayout = (page: ReactElement) => {
 };
 
 
-export default Dashboard;
+export default Fornecedores;
