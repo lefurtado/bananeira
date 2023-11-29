@@ -120,7 +120,7 @@ const Login = (props: any) => {
                                             <Card className="auth-card bg-primary h-100 border-0 shadow-none p-sm-3 overflow-hidden mb-0">
                                                 <Card.Body className="p-4 d-flex justify-content-between flex-column">
                                                     <div className="auth-image mb-3">
-                                                        <Image src={logoLightFull} alt="" height="26" />
+                                                        <Image src={logoLightFull} alt="" height="100" />
                                                         <Image src={authEffect2} alt="" className="auth-effect-2" priority />
                                                         <Image src={authEffect} alt="" className="auth-effect" />
                                                         <Image src={authEffect} alt="" className="auth-effect-3" />
