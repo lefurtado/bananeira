@@ -36,7 +36,7 @@ function GlobalFilter({
           <div className="position-relative">
             <label htmlFor="search-bar-0" className="search-label">
               <span id="search-bar-0-label" className="sr-only">
-                Search this table
+                Pesquisar
               </span>
               <input
                 onChange={e => {
@@ -46,11 +46,11 @@ function GlobalFilter({
                 id="search-bar-0"
                 type="text"
                 className="form-control"
-                placeholder={`${count} records...`}
+                placeholder={`${count} resultados...`}
                 value={value || ""}
               />
             </label>
-            <i className="bx bx-search-alt search-icon"></i>
+            <i className="bx bx-search search-icon"></i>
           </div>
         </div>
       </Col>
@@ -255,22 +255,22 @@ const TableContainer = ({
       </div>
       <Row className="align-items-center mt-2 py-2 px-2 gy-2 text-center text-sm-start">
         <div className="col-sm">
-          <div className="text-muted">Showing <span className="fw-semibold">{pageIndex + 1}</span> of <span className="fw-semibold">{pageOptions.length}</span> Results</div>
+          <div className="text-muted">Mostrando <span className="fw-semibold">{pageIndex + 1}</span> de <span className="fw-semibold">{pageOptions.length}</span> Resultados</div>
         </div>
         <div className="col-sm-auto">
           <ul className="pagination pagination-separated pagination-md mb-0 justify-content-center justify-content-sm-start">
             <li className={!canPreviousPage ? "page-item disabled" : "page-item"} onClick={previousPage}>
-              <Button variant="link" className="page-link">Previous</Button>
+              <Button variant="link" className="page-link">Anterior</Button>
             </li>
             {pageOptions.map((item: any, key: number) => (
               <React.Fragment key={key}>
                 <li className="page-item">
-                  <Button variant="link" className={pageIndex === item ? "page-link active" : "page-link"} onClick={() => gotoPage(item)}>{item + 1}</Button>
+                  <Button variant="link" className={pageIndex === item ? "page-link active bg-primary border-light" : "page-link"} onClick={() => gotoPage(item)}>{item + 1}</Button>
                 </li>
               </React.Fragment>
             ))}
             <li className={!canNextPage ? "page-item disabled" : "page-item"} onClick={nextPage}>
-              <Button variant="link" className="page-link">Next</Button>
+              <Button variant="link" className="page-link">Próximo</Button>
             </li>
           </ul>
         </div>
