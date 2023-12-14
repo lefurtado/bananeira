@@ -41,7 +41,7 @@ const ModalFornecedores = ({ showModal, onHide, finalState }) => {
               </Col>
               <Col lg={12} >
                 <Form.Select className='mb-3 form-select-lg' aria-label='exemplo'>
-                  <option selected value="">Selecione o tipo de fornecedor</option>
+                  <option defaultValue={0} value="">Selecione o tipo de fornecedor</option>
                   <option value="1">Plantas</option>
                   <option value="2">Acessórios</option>
                 </Form.Select>
