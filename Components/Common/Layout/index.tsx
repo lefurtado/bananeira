@@ -20,7 +20,6 @@ import { useProfile } from "@common/UserHooks";
 
 //redux
 import { useSelector, useDispatch } from "react-redux";
-import Footer from './Footer';
 import RightSidebar from '@common/RightSidebar';
 
 const Layout = ({ children }: any) => {
@@ -107,8 +106,7 @@ const Layout = ({ children }: any) => {
                     <div className="main-content">
                         {children}
                     </div>
-                    <Footer />
-                    <RightSidebar />
+                    {/* <RightSidebar /> */}
                 </div>
             </>
 
