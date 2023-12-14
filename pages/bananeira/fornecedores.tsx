@@ -4,13 +4,21 @@ import Layout from '@common/Layout';
 import { Button, Card, Col, Row } from 'react-bootstrap';
 import SearchTable from './SearchTable.jsx';
 import ModalFornecedores from 'Components/bananeira/ModalFornecedores';
+import ModalDetalhesFornecedores from 'Components/bananeira/ModalDetalhesFornecedor';
 
 const Fornecedores = () => {
   const [modal_grid, setmodal_grid] = useState<boolean>(false);
+  const [modal_gridDetails, setmodal_gridDetails] = useState<boolean>(false);
+  const [details, setDetails] = useState<any>(null);
   
   function tog_grid() {
     setmodal_grid(!modal_grid);
   };
+
+  function handleModalDetails(cellProps: any) {
+    setmodal_gridDetails(!modal_gridDetails);
+    setDetails(cellProps);
+  }
 
   return (
     <React.Fragment>
@@ -26,7 +34,19 @@ const Fornecedores = () => {
                 <h5 className="card-title mb-0">Lista de Fornecedores</h5>
               </Card.Header>
               <Card.Body>
-                <SearchTable />
+                <SearchTable 
+                  handleModalOpen={handleModalDetails}
+                />
+
+                {/* Modal detalhes do fornecedor */}
+
+                <ModalDetalhesFornecedores 
+                  showModal={modal_gridDetails}
+                  onHide={() => handleModalDetails()}
+                  finalState={setmodal_gridDetails}
+                  item={details}
+                />
+
                 <Button
                   variant='primary'
                   onClick={() => tog_grid()}
