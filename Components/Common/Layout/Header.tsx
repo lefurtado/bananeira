@@ -126,7 +126,7 @@ const Header = () => {
               </Dropdown> */}
 
               <Button onClick={toggleLayoutMode} className='btn btn-icon btn-topbar btn-ghost-dark rounded-circle mode-layout arrow-none'>
-                {actualLayout === LAYOUT_MODE_TYPES.LIGHTMODE ? <i className="bi bi-sun align-middle me-2 fs-20"></i> : <i className="bi bi-moon align-middle me-2 fs-20"></i>}
+                {actualLayout === LAYOUT_MODE_TYPES.LIGHTMODE ? <i className="bi bi-sun align-middle fs-20"></i> : <i className="bi bi-moon align-middle fs-20"></i>}
               </Button>
 
               {/* ProfileDropdown */}
