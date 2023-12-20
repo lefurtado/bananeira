@@ -1,20 +1,31 @@
-import React, { ReactElement } from 'react';
+import React, { ReactElement, useState } from 'react';
 import Head from 'next/head';
 import Layout from '@common/Layout';
-import { Card, Col, Row } from 'react-bootstrap';
+import { Card, Col, Row, Button } from 'react-bootstrap';
 import Image from 'next/image';
 import Link from 'next/link';
 
-import avtar1 from '@assets/images/bananeira/plantas/aspargo_outonal.jpeg'
-import avtar2 from '@assets/images/users/avatar-2.jpg'
-import avtar3 from '@assets/images/bananeira/plantas/bq_samambaia_mescla.jpeg'
-import avtar4 from '@assets/images/bananeira/plantas/pendente_samambaia.jpeg'
-import avtar5 from '@assets/images/bananeira/plantas/redondo_mescla.jpeg'
-import avtar6 from '@assets/images/bananeira/plantas/salsao_outonal.jpeg'
-import avtar7 from '@assets/images/users/avatar-7.jpg'
-import avtar8 from '@assets/images/users/avatar-8.jpg'
+import avtar1 from '@assets/images/bananeira/plantas/aspargo_outonal.jpeg';
+import avtar3 from '@assets/images/bananeira/plantas/bq_samambaia_mescla.jpeg';
+import avtar4 from '@assets/images/bananeira/plantas/pendente_samambaia.jpeg';
+import avtar5 from '@assets/images/bananeira/plantas/redondo_mescla.jpeg';
+import avtar6 from '@assets/images/bananeira/plantas/salsao_outonal.jpeg';
+import ModalEstoque from 'Components/bananeira/ModalEstoque';
 
 const Estoque = () => {
+  const [modal_grid, setmodal_grid] = useState<boolean>(false);
+  const [modal_gridDetails, setmodal_gridDetails] = useState<boolean>(false);
+  const [details, setDetails] = useState<any>(null);
+
+  function tog_grid() {
+    setmodal_grid(!modal_grid);
+  };
+
+  function handleModalDetails(cellProps: any) {
+    setmodal_gridDetails(!modal_gridDetails);
+    setDetails(cellProps);
+  }
+
   return (
     <React.Fragment>
       <Head>
@@ -34,7 +45,7 @@ const Estoque = () => {
                   <p className="text-muted mb-0">BG230589</p>
                 </div>
               </div>
-              <Link href="#" className="btn btn-primary btn-sm">Ver Detalhes</Link>
+              <Button onClick={() => tog_grid()} className="btn btn-primary btn-sm">Ver Detalhes</Button>
             </Card>
           </Col>
           <Col>
@@ -48,7 +59,7 @@ const Estoque = () => {
                   <p className="text-muted mb-0">AM1733</p>
                 </div>
               </div>
-              <Link href="#" className="btn btn-primary btn-sm">Ver Detalhes</Link>
+              <Button onClick={() => tog_grid()} className="btn btn-primary btn-sm">Ver Detalhes</Button>
             </Card>
           </Col>
           <Col>
@@ -62,7 +73,7 @@ const Estoque = () => {
                   <p className="text-muted mb-0">AM1857</p>
                 </div>
               </div>
-              <Link href="#" className="btn btn-primary btn-sm">Ver Detalhes</Link>
+              <Button onClick={() => tog_grid()} className="btn btn-primary btn-sm">Ver Detalhes</Button>
             </Card>
           </Col>
           <Col>
@@ -76,7 +87,7 @@ const Estoque = () => {
                   <p className="text-muted mb-0">AM1679</p>
                 </div>
               </div>
-              <Link href="#" className="btn btn-primary btn-sm">Ver Detalhes</Link>
+              <Button onClick={() => tog_grid()} className="btn btn-primary btn-sm">Ver Detalhes</Button>
             </Card>
           </Col>
           <Col>
@@ -90,9 +101,17 @@ const Estoque = () => {
                   <p className="text-muted mb-0">AM2181</p>
                 </div>
               </div>
-              <Link href="#" className="btn btn-primary btn-sm">Ver Detalhes</Link>
+              <Button onClick={() => tog_grid()} className="btn btn-primary btn-sm">Ver Detalhes</Button>
             </Card>
           </Col>
+
+          {/* MODAL DE DETALHES DO ITEM DO ESTOQUE */}
+          <ModalEstoque
+            showModal={modal_grid}
+            onHide={() => tog_grid()}
+            finalState={setmodal_grid}
+          />
+
         </Row>
       </div>
 
